@@ -1,0 +1,25 @@
+<!-- main/templates/main/product_list.html -->
+
+{% extends 'main/index.html' %}
+{% load static %}
+{% block title %}Products - BuyIT{% endblock %}
+
+{% block content %}
+<h1>Products</h1>
+<div class="row row-cols-1 row-cols-md-4 g-4">
+     {% for product in products %}
+        <div class="col">
+            <div class="card h-100">
+                <img src="{{product.image_url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">KSh{{product.price}}.</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<a href="{% url 'index' %}" class="btn btn-primary">Back to Home</a>
+{% endblock %}
+

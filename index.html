@@ -1,0 +1,114 @@
+<!-- main/templates/main/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyIT</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{%static 'CSS/index.css' %}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="{%static 'images/My logo.png'%}" class="img-fluid" alt="...">
+                <h1 >BuyIT</h1>
+                <p style="font-size: 12px; font-weight: 400;">Buy Smart,Buy IT.</p>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="search-bar">
+                <label for="search-bar"></label>
+                <input type="text" id="search-bar" placeholder="I'm looking for...">
+                <button id="search-btn">Search</button>
+            </div>
+            <div class="account">
+                <i class="fa fa-user"></i>
+                <img src="{%static 'images/user.png'%}" alt="...">
+                <span>My Account</span>
+                <i class="fas fa-angle-down"></i>
+            <div class="dropdown">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                My Account
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">My Account</a></li>
+                <li><a class="dropdown-item" href="#">Saved items</a></li>
+                <li><a class="dropdown-item" href="#">Orders</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">SIGN UP</a></li>
+              </ul>
+            </div>
+            <div class="cart">
+                <i class="fa fa-shopping-cart"></i>
+                <a href="{% url 'cart' %}">
+                <img id="cart-icon" src=" static/images/cart.png'" alt="...">
+                </a>
+                <p id="cart-total">0</p>
+                <span>Cart</span>
+            </div>
+            </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to BuyIT</h1>
+        <p>Find the best IT products at the best prices</p>
+        <button class="cta-btn">Start Shopping</button>
+        <img src="hero-image.jpg" alt="Hero Image">
+    </section>
+
+    <!-- Product Categories Section -->
+    <section class="product-categories">
+        <h2>Popular Product Categories</h2>
+        <ul>
+            <li>
+                <img src="laptop-image.jpg" alt="Laptop Image">
+                <h3>Laptops</h3>
+                <p>Find the best laptops from top brands</p>
+            </li>
+            <li>
+                <img src="desktop-image.jpg" alt="Desktop Image">
+                <h3>Desktops</h3>
+                <p>Find the best desktops for your needs</p>
+            </li>
+            <li>
+                <img src="printer-image.jpg" alt="Printer Image">
+                <h3>Printers</h3>
+                <p>Find the best printers for your office</p>
+            </li>
+            <li>
+                <img src="printer-image.jpg" alt="Printer Image">
+                <h3>Phones</h3>
+                <p>Find the best phone for your daily needs</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta-section">
+        <h2>Start Shopping Today!</h2>
+        <button class="cta-btn">Shop Now</button>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <ul>
+            <li><a href="#" class="footer-link">Contact Us</a></li>
+            <li><a href="#" class="footer-link">About Us</a></li>
+            <li><a href="#" class="footer-link">FAQ</a></li>
+            <li><a href="#" class="footer-link">Terms and Conditions</a></li>
+        </ul>
+        <p>&copy; 2024 BuyIT</p>
+    </footer>
+ <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

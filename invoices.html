@@ -1,0 +1,30 @@
+<!-- main/templates/main/invoice_list.html -->
+
+{% extends 'main/index.html' %}
+{% load static %}
+{% block title %}Invoices - BuyIT{% endblock %}
+
+{% block content %}
+<h1>Invoices</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Invoice ID</th>
+            <th>Customer</th>
+            <th>Total Amount</th>
+            <th>Invoice Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for invoice in invoices %}
+        <tr>
+            <td>{{ invoice.id }}</td>
+            <td>{{ invoice.customer.name }}</td>
+            <td>${{ invoice.total_amount }}</td>
+            <td>{{ invoice.invoice_date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'index' %}" class="btn btn-primary">Back to Home</a>
+{% endblock %}
